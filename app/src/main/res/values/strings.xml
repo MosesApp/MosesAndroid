@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Moses</string>
+    <string name="facebook_app_id">Not Set</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_search">Search</string>
+
+    <string name="owe_text">you owe</string>
+    <string name="owed_text">you are owed</string>
+    <string name="total_balance_text">total balance</string>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f6f6f7</color>
+    <color name="mosesBlue">#164277</color>
+    <color name="mosesGreen">#4b9242</color>
+    <color name="mosesGrey">#717171</color>
+    <color name="pageIndicatorGrey">#929292</color>
+    <color name="windowBackground">#fafafa</color>
+    <color name="mosesSummaryGrey">#f0f0f0</color>
+    <color name="border">#e0e0e0</color>
+
+</resources>
