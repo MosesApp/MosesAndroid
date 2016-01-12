@@ -12,4 +12,8 @@
     <string name="owed_text">you are owed</string>
     <string name="total_balance_text">total balance</string>
 
+    <!-- Images Descriptions -->
+    <string name="avatar_image">Group avatar</string>
+    <string name="balance_indicator">Balance Indicator</string>
+
 </resources>

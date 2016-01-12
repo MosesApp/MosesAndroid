@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="me.mosesapp.moses.activities.HomeActivity"
     tools:showIn="@layout/app_bar_home">
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:background="@color/mosesSummaryGrey">
+        android:background="@color/white">
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="fill_parent"
@@ -35,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/summary_label"
                 android:text="-$200"
+                android:textColor="@android:color/holo_red_dark"
                 android:gravity="center"/>
         </android.support.v7.widget.LinearLayoutCompat>
 
@@ -63,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/summary_label"
                 android:text="$100"
+                android:textColor="@android:color/holo_green_dark"
                 android:gravity="center"/>
         </android.support.v7.widget.LinearLayoutCompat>
 
@@ -91,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/summary_label"
                 android:text="-$200"
+                android:textColor="@android:color/holo_red_dark"
                 android:gravity="center"/>
         </android.support.v7.widget.LinearLayoutCompat>
 
@@ -99,13 +103,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/border" />
+        android:background="@color/border"
+        android:layout_marginBottom="5dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/group_recycler_view"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

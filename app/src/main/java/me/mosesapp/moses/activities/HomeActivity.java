@@ -3,6 +3,8 @@ package me.mosesapp.moses.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +14,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
+import java.util.List;
+
+import me.mosesapp.moses.MosesApplication;
 import me.mosesapp.moses.R;
+import me.mosesapp.moses.adapters.GroupRecyclerViewAdapter;
+import me.mosesapp.moses.dao.MosesDAO;
+import me.mosesapp.moses.model.Group;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView.Adapter mGroupAdapter;
+    private MosesDAO mMosesDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //DAO
+        mMosesDAO = ((MosesApplication) getApplication()).getMosesDAO();
 
         //Action bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -47,6 +63,16 @@ public class HomeActivity extends AppCompatActivity
         //Navigation
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Cards
+        mRecyclerView = (RecyclerView) findViewById(R.id.group_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mGroupAdapter = new GroupRecyclerViewAdapter(mMosesDAO.getGroups());
+        mRecyclerView.setAdapter(mGroupAdapter);
     }
 
     @Override
