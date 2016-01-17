@@ -11,4 +11,5 @@
 
     <dimen name="text_size_body1">15sp</dimen>
     <dimen name="text_size_body2">12sp</dimen>
+
 </resources>

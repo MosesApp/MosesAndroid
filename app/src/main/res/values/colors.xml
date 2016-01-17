@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="notification_bar_blue">#0A1F37</color>
     <color name="colorPrimary">#f6f6f7</color>
     <color name="mosesBlue">#164277</color>
     <color name="mosesGreen">#4b9242</color>
@@ -10,5 +11,6 @@
     <color name="border">#e0e0e0</color>
     <color name="white">#ffffff</color>
     <color name="textColorHomePrimary">#5f5f5f</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

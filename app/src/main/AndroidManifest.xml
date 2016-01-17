@@ -21,20 +21,19 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".activities.HomeActivity"
-            android:theme="@style/AppTheme">
+            android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.CreateGroupActivity"
+            android:label="@string/title_activity_create_group" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-
-        <activity android:name=".activities.CreateGroupActivity"></activity>
     </application>
 
 </manifest>
