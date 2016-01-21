@@ -33,4 +33,11 @@ public interface MosesDAO {
      */
     List<GroupUser> getGroupUser(Long groupID);
 
+    /**
+     * Get all supported currencies
+     *
+     * @return supported currencies
+     */
+    List<me.mosesapp.moses.model.Currency> getCurrencies();
+
 }

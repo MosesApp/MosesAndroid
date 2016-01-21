@@ -1,15 +1,15 @@
 package me.mosesapp.moses;
 
 import android.app.Application;
-import android.support.v7.widget.LinearLayoutCompat;
-
-import me.mosesapp.moses.dao.MosesDAO;
-import me.mosesapp.moses.model.Group;
-import me.mosesapp.moses.model.GroupUser;
-import me.mosesapp.moses.model.User;
 
 import java.util.Arrays;
 import java.util.List;
+
+import me.mosesapp.moses.dao.MosesDAO;
+import me.mosesapp.moses.model.Currency;
+import me.mosesapp.moses.model.Group;
+import me.mosesapp.moses.model.GroupUser;
+import me.mosesapp.moses.model.User;
 
 /**
  * Created by thiago on 1/10/16.
@@ -18,7 +18,7 @@ public class MosesApplication extends Application {
 
     private MosesDAO mMosesDAO;
 
-    public MosesApplication(){
+    public MosesApplication() {
         super();
         this.mMosesDAO = new MosesDAO() {
             @Override
@@ -31,11 +31,11 @@ public class MosesApplication extends Application {
                 g3.setName("Skiing Meetup Group");
                 Group g4 = new Group();
                 g4.setName("Britney, Ashley and Me (BBFs)");
-                return Arrays.asList(g1,g2,g3,g4);
+                return Arrays.asList(g1, g2, g3, g4);
             }
 
             @Override
-            public List<User> getFriends(){
+            public List<User> getFriends() {
                 User f1 = new User();
                 f1.setName("Jonny");
                 User f2 = new User();
@@ -47,11 +47,11 @@ public class MosesApplication extends Application {
                 User f5 = new User();
                 f5.setName("Brad");
 
-                return Arrays.asList(f1,f2,f3,f4,f5);
+                return Arrays.asList(f1, f2, f3, f4, f5);
             }
 
             @Override
-            public List<GroupUser> getGroupUser(Long groupID){
+            public List<GroupUser> getGroupUser(Long groupID) {
                 User f0 = new User();
                 f0.setName("Me");
                 GroupUser gu0 = new GroupUser();
@@ -73,12 +73,24 @@ public class MosesApplication extends Application {
                 GroupUser gu3 = new GroupUser();
                 gu3.setUser(f3);
 
-                return Arrays.asList(gu0,gu1,gu2,gu3);
+                return Arrays.asList(gu0, gu1, gu2, gu3);
+            }
+
+            @Override
+            public List<Currency> getCurrencies() {
+                Currency c1 = new Currency();
+                c1.setPrefix("R$");
+                Currency c2 = new Currency();
+                c2.setPrefix("US$");
+                Currency c3 = new Currency();
+                c3.setPrefix("CAD");
+
+                return Arrays.asList(c1, c2, c3);
             }
         };
     }
 
-    public MosesDAO getMosesDAO(){
+    public MosesDAO getMosesDAO() {
         return mMosesDAO;
     }
 }

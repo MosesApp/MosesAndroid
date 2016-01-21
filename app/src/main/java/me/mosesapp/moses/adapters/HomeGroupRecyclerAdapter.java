@@ -48,7 +48,7 @@ public class HomeGroupRecyclerAdapter extends RecyclerView.Adapter<HomeGroupRecy
         public ImageView mGroupAvatarView;
         public ImageView mBalanceIndicatorCircleView;
 
-        public GroupViewHolder (View view){
+        public GroupViewHolder(View view) {
             super(view);
             mGroupNameView = (TextView) view.findViewById(R.id.home_group_card_name);
             mBalanceValueView = (TextView) view.findViewById(R.id.group_balance_value);

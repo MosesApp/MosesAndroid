@@ -1,8 +1,8 @@
 package me.mosesapp.moses.activities;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import me.mosesapp.moses.adapters.LoginPagerAdapter;
 import me.mosesapp.moses.R;
+import me.mosesapp.moses.adapters.LoginPagerAdapter;
 
-public class LoginActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
+public class LoginActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
     private List<ImageView> pageViewIndicatorItems;
 
@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements ViewPager.OnPage
         loginButton.setReadPermissions(Arrays.asList("email", "public_profile", "user_friends"));
     }
 
-    private void setPageViewIndicator(int indicatorCount){
+    private void setPageViewIndicator(int indicatorCount) {
         LinearLayout viewPagerIndicatorItems = (LinearLayout) findViewById(R.id.viewPagerIndicatorItems);
         pageViewIndicatorItems = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements ViewPager.OnPage
         );
         params.setMargins(20, 0, 20, 0);
 
-        for(int i = 0; i < indicatorCount; i++) {
+        for (int i = 0; i < indicatorCount; i++) {
             ImageView indicator = new ImageView(this);
             indicator.setImageResource(R.drawable.nonselecteditem_dot);
 
@@ -58,20 +58,20 @@ public class LoginActivity extends AppCompatActivity implements ViewPager.OnPage
     }
 
     @Override
-    public void onPageSelected(int position){
-        for(ImageView indicator : pageViewIndicatorItems){
+    public void onPageSelected(int position) {
+        for (ImageView indicator : pageViewIndicatorItems) {
             indicator.setImageResource(R.drawable.nonselecteditem_dot);
         }
         pageViewIndicatorItems.get(position).setImageResource(R.drawable.selecteditem_dot);
     }
 
     @Override
-    public void onPageScrollStateChanged(int state){
+    public void onPageScrollStateChanged(int state) {
 
     }
 
     @Override
-    public void onPageScrolled (int position, float positionOffset, int positionOffsetPixels){
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
     }
 }

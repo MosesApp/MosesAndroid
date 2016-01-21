@@ -4,6 +4,8 @@
     <string name="facebook_app_id">Not Set</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_create_group">New Group</string>
+    <string name="title_activity_create_bill">New Bill</string>
+
 
     <!-- Action Descriptions -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -24,9 +26,16 @@
     <string name="members_label">Members</string>
     <string name="group_administrator">Administrator</string>
 
+    <string name="individual_contribution_label">Individual Contribution</string>
+
+
     <!-- Field hints -->
     <string name="group_name_hint">Group name</string>
     <string name="group_description_hint">Group description</string>
     <string name="group_add_member_hint">Add member</string>
+
+    <string name="bill_name_hint">Bill name</string>
+    <string name="bill_description_hint">Bill description</string>
+    <string name="bill_total_hint">Total</string>
 
 </resources>

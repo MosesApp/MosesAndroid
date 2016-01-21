@@ -7,25 +7,29 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AutoCompleteTextView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import me.mosesapp.moses.MosesApplication;
 import me.mosesapp.moses.R;
-import me.mosesapp.moses.adapters.GroupUserRecyclerAdapter;
-import me.mosesapp.moses.adapters.UserAdapter;
+import me.mosesapp.moses.adapters.SpentOnBillRecyclerAdapter;
 import me.mosesapp.moses.dao.MosesDAO;
+import me.mosesapp.moses.model.Currency;
 
-public class CreateGroupActivity extends AppCompatActivity {
+public class CreateBillActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private MosesDAO mMosesDAO;
+    private ArrayAdapter<Currency> mCurrencyAdapter;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView.Adapter mGroupUserAdapter;
-    private UserAdapter mFriendAdapter;
-    private MosesDAO mMosesDAO;
+    private SpentOnBillRecyclerAdapter mSpentOnBillAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_group);
+        setContentView(R.layout.activity_create_bill);
 
         //Action bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -36,22 +40,23 @@ public class CreateGroupActivity extends AppCompatActivity {
         //DAO
         mMosesDAO = ((MosesApplication) getApplication()).getMosesDAO();
 
+        //Currency Spinner
+        Spinner spinner = (Spinner) findViewById(R.id.currency_spinner);
+        mCurrencyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, mMosesDAO.getCurrencies());
+        mCurrencyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(mCurrencyAdapter);
+        spinner.setOnItemSelectedListener(this);
+
         //GroupUser List
-        mRecyclerView = (RecyclerView) findViewById(R.id.create_group_friend_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.spent_on_bill_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mGroupUserAdapter = new GroupUserRecyclerAdapter(mMosesDAO.getGroupUser(0L));
-        mRecyclerView.setAdapter(mGroupUserAdapter);
-
-        //Autocomplete adapter
-        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.create_group_add_member);
-        mFriendAdapter = new UserAdapter(this, R.layout.friend_autocomplete_item, R.id.autocomplete_friend_name, mMosesDAO.getFriends());
-        textView.setAdapter(mFriendAdapter);
+        mSpentOnBillAdapter = new SpentOnBillRecyclerAdapter(mMosesDAO.getGroupUser(0L));
+        mRecyclerView.setAdapter(mSpentOnBillAdapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,5 +77,15 @@ public class CreateGroupActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

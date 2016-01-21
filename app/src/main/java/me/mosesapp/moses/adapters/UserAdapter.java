@@ -1,7 +1,6 @@
 package me.mosesapp.moses.adapters;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -23,10 +22,10 @@ public class UserAdapter extends ArrayAdapter<User> implements Filterable {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         FriendViewHolder friendViewHolder;
 
-        if(convertView == null){
+        if (convertView == null) {
             convertView = super.getView(position, convertView, parent);
             friendViewHolder = new FriendViewHolder(convertView);
             convertView.setTag(friendViewHolder);
@@ -42,7 +41,7 @@ public class UserAdapter extends ArrayAdapter<User> implements Filterable {
         public TextView mFriendNameView;
         public ImageView mFriendAvatarView;
 
-        public FriendViewHolder(View view){
+        public FriendViewHolder(View view) {
             mFriendNameView = (TextView) view.findViewById(R.id.autocomplete_friend_name);
             mFriendAvatarView = (ImageView) view.findViewById(R.id.autocomplete_friend_avatar);
             view.setTag(this);

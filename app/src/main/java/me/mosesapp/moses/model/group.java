@@ -1,7 +1,5 @@
 package me.mosesapp.moses.model;
 
-import java.math.BigDecimal;
-
 /**
  * Created by thiago on 1/10/16.
  */

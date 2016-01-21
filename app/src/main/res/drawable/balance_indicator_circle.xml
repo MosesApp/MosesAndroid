@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval" android:useLevel="true"
-    android:dither="true">
+    android:dither="true"
+    android:shape="oval"
+    android:useLevel="true">
 
-    <size android:height="18dip" android:width="18dip"/>
+    <size
+        android:width="18dip"
+        android:height="18dip" />
 
-    <solid android:color="@color/mosesBlue"/>
+    <solid android:color="@color/mosesBlue" />
 </shape>

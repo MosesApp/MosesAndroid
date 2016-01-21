@@ -10,7 +10,7 @@
     android:gravity="center_vertical">
 
     <ImageView
-        android:id="@+id/autocomplete_friend_avatar"
+        android:id="@+id/spent_on_bill_friend_avatar"
         android:layout_width="40dp"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
@@ -18,37 +18,24 @@
         android:src="@drawable/avatar_example" />
 
     <TextView
-        android:id="@+id/autocomplete_friend_name"
+        android:id="@+id/spent_on_bill_friend_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/autocomplete_friend_avatar"
-        android:layout_toRightOf="@id/autocomplete_friend_avatar"
+        android:layout_toEndOf="@id/spent_on_bill_friend_avatar"
+        android:layout_toRightOf="@id/spent_on_bill_friend_avatar"
         android:gravity="center_vertical"
         android:textSize="@dimen/text_size_body1"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/group_admin"
+    <EditText
+        android:id="@+id/spent_on_bill"
         android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_toLeftOf="@+id/group_remove_friend"
-        android:layout_toStartOf="@+id/group_remove_friend"
-        android:gravity="center_vertical"
-        android:text="@string/group_administrator"
-        android:textColor="@color/mosesGreen"
-        android:textStyle="bold"
-        android:visibility="invisible" />
-
-    <ImageButton
-        android:id="@+id/group_remove_friend"
-        android:layout_width="40dp"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_close_grey_48dp" />
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:textStyle="bold" />
 </RelativeLayout>

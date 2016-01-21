@@ -4,39 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="me.mosesapp.moses.activities.CreateGroupActivity">
+    tools:context="me.mosesapp.moses.activities.CreateBillActivity">
 
     <include layout="@layout/app_bar_create" />
 
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/create_bill_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:hint="@string/group_name_hint" />
 
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/green_circle"
-            android:padding="20dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_add_a_photo_white_48dp" />
-
-
-        <EditText
-            android:id="@+id/create_group_name"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:hint="@string/group_name_hint" />
-
-    </LinearLayout>
 
     <EditText
         android:id="@+id/create_group_description"
@@ -49,20 +37,7 @@
         android:layout_marginTop="20dp"
         android:hint="@string/group_description_hint" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/mosesGreen"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="@string/members_label"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-
-    <AutoCompleteTextView
-        android:id="@+id/create_group_add_member"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginEnd="10dp"
@@ -70,10 +45,36 @@
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/group_add_member_hint" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="@string/bill_total_hint"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:id="@+id/currency_spinner"
+            android:layout_width="65dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/mosesGreen"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/individual_contribution_label"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/create_group_friend_recycler_view"
+        android:id="@+id/spent_on_bill_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />

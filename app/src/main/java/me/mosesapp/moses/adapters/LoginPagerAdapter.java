@@ -12,7 +12,7 @@ import me.mosesapp.moses.R;
 public class LoginPagerAdapter extends PagerAdapter {
 
     private Context mContext;
-    private int[] mImages = new int[] {
+    private int[] mImages = new int[]{
             R.drawable.login_screen_01,
             R.drawable.login_screen_02,
             R.drawable.login_screen_03

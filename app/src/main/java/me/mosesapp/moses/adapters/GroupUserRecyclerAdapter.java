@@ -15,7 +15,7 @@ import me.mosesapp.moses.model.GroupUser;
 /**
  * Created by thiago on 1/13/16.
  */
-public class GroupUserRecyclerAdapter extends RecyclerView.Adapter<GroupUserRecyclerAdapter.GroupUserViewHolder>{
+public class GroupUserRecyclerAdapter extends RecyclerView.Adapter<GroupUserRecyclerAdapter.GroupUserViewHolder> {
     private List<GroupUser> mFriends;
 
     public GroupUserRecyclerAdapter(List<GroupUser> friends) {
@@ -35,7 +35,7 @@ public class GroupUserRecyclerAdapter extends RecyclerView.Adapter<GroupUserRecy
     public void onBindViewHolder(GroupUserViewHolder holder, int position) {
         holder.mFriendNameView.setText(mFriends.get(position).getUser().getName());
 
-        if(mFriends.get(position).isAdmin()){
+        if (mFriends.get(position).isAdmin()) {
             holder.mAdminView.setVisibility(View.VISIBLE);
         }
     }
@@ -50,7 +50,7 @@ public class GroupUserRecyclerAdapter extends RecyclerView.Adapter<GroupUserRecy
         public TextView mAdminView;
         public ImageView mFriendAvatarView;
 
-        public GroupUserViewHolder(View view){
+        public GroupUserViewHolder(View view) {
             super(view);
             mFriendNameView = (TextView) view.findViewById(R.id.autocomplete_friend_name);
             mAdminView = (TextView) view.findViewById(R.id.group_admin);
