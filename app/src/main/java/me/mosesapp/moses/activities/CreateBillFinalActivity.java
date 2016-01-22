@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import me.mosesapp.moses.MosesApplication;
 import me.mosesapp.moses.R;
@@ -18,7 +17,7 @@ import me.mosesapp.moses.adapters.SpentOnBillRecyclerAdapter;
 import me.mosesapp.moses.dao.MosesDAO;
 import me.mosesapp.moses.model.Currency;
 
-public class CreateBillActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class CreateBillFinalActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private MosesDAO mMosesDAO;
     private ArrayAdapter<Currency> mCurrencyAdapter;
     private RecyclerView mRecyclerView;
@@ -29,7 +28,7 @@ public class CreateBillActivity extends AppCompatActivity implements AdapterView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_bill);
+        setContentView(R.layout.activity_create_bill_final);
 
         //Action bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -39,13 +38,6 @@ public class CreateBillActivity extends AppCompatActivity implements AdapterView
 
         //DAO
         mMosesDAO = ((MosesApplication) getApplication()).getMosesDAO();
-
-        //Currency Spinner
-        Spinner spinner = (Spinner) findViewById(R.id.currency_spinner);
-        mCurrencyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, mMosesDAO.getCurrencies());
-        mCurrencyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(mCurrencyAdapter);
-        spinner.setOnItemSelectedListener(this);
 
         //GroupUser List
         mRecyclerView = (RecyclerView) findViewById(R.id.spent_on_bill_recycler_view);

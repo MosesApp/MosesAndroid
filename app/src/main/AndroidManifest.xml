@@ -32,7 +32,10 @@
             android:name=".activities.CreateGroupActivity"
             android:label="@string/title_activity_create_group" />
         <activity
-            android:name=".activities.CreateBillActivity"
+            android:name=".activities.CreateBillInicialActivity"
+            android:label="@string/title_activity_create_bill" />
+        <activity
+            android:name=".activities.CreateBillFinalActivity"
             android:label="@string/title_activity_create_bill" />
 
         <meta-data

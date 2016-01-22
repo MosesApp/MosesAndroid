@@ -27,6 +27,8 @@
     <string name="group_administrator">Administrator</string>
 
     <string name="individual_contribution_label">Individual Contribution</string>
+    <string name="bill_remaining_value">To be divided</string>
+    <string name="bill_total_value">Bill Total</string>
 
 
     <!-- Field hints -->
